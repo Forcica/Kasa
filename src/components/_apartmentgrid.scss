@@ -1,7 +1,5 @@
-@use "../scss/variables.scss" as colors;
-
 .grid {
-  background-color: colors.$background-dark;
+  background-color: $background-dark;
   min-height: 50vh;
   border-radius: 2rem;
   display: grid;
@@ -41,6 +39,6 @@
     column-gap: 0;
     padding-left: 0;
     padding-right: 0;
-    background-color: colors.$grid-background-light;
+    background-color: $grid-background-light;
   }
 }

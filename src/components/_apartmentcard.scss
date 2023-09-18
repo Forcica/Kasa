@@ -1,5 +1,3 @@
-@use "../scss/variables.scss" as *;
-
 .apartment {
   border-radius: 1rem;
   flex-basis: 30%;
@@ -14,10 +12,10 @@
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
-    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     filter: brightness(0.8);
   }
-  @media screen and (width <= 768px) {
+  @media screen and (max-width: 768px) {
     .apartment {
       flex-basis: 100%;
     }

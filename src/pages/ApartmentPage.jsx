@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { DescriptionPanel } from "../components/DescriptionPanel";
-import "./ApartmentPage.scss";
 import { ImageBanner } from "../components/ImageBanner";
 import { ApartmentHeader } from "../components/ApartmentHeader";
 import { useLocation } from "react-router-dom";

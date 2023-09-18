@@ -1,4 +1,3 @@
-import "./ApartmentGrid.scss";
 import ApartmentCard from "./ApartmentCard.jsx";
 import { useLoaderData } from "react-router-dom";
 import React, { useEffect, useState } from "react";
