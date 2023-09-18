@@ -1,0 +1,54 @@
+@use "../scss/variables.scss" as *;
+
+.banner {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  padding-inline: 2rem;
+  background-image: url("../../public/banner.png");
+  background-color: rgba(255, 255, 255, 0.5);
+  min-height: 223px;
+  margin: auto;
+  border-radius: 2rem;
+  display: grid;
+  place-items: center;
+  color: $color-tertiary;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+  max-width: 100%;
+  &::before {
+    position: absolute;
+    border-radius: 2rem;
+    content: "";
+    inset: 0;
+    opacity: 0.5;
+  }
+  h2 {
+    font-size: 3vw;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 900px) {
+    h2 {
+      font-size: 4vw; 
+    }
+    @media (max-width: 470px) {
+
+        min-height: 111px;
+        border-radius: 1rem;
+        padding-left: 1rem;
+        padding-right: 5rem;
+        filter: contrast(0.98);
+          h2 {
+            font-size: 24px; 
+            white-space:normal;
+            text-align: left;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          }
+      }
+    
+  }
+}
