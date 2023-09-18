@@ -1,0 +1,20 @@
+$color-primary: #ff6060;
+$color-secondary: #863535;
+$color-tertiary: white;
+$background-dark: #f6f6f6;
+$background-light: #f6f6f6;
+$grid-background-light: white;
+$footer-background-color: black;
+
+
+@mixin responsive-font-size($base-size, $breakpoint) {
+    font-size: $base-size;
+    
+    @media (max-width: $breakpoint) {
+      font-size: calc($br);
+    }
+  }
+  
+  @mixin min-font-size($min-size) {
+    font-size: $min-size;
+  }

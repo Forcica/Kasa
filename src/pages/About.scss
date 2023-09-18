@@ -1,0 +1,8 @@
+.about__container {
+    padding-inline: 4rem;
+  }
+  @media screen and (width <= 700px) {
+    .about__container {
+        padding-inline: 1rem;
+      }
+  }
