@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { DescriptionPanel } from "../components/DescriptionPanel";
-import { ImageBanner } from "../components/ImageBanner";
-import { ApartmentHeader } from "../components/ApartmentHeader";
+import { DescriptionPanel } from "../../components/DescriptionPanel/DescriptionPanel";
+import { ImageBanner } from "../../components/ImageBanner/ImageBanner";
+import { ApartmentHeader } from "../../components/ApartmentHeader/ApartmentHeader";
 import { useLocation } from "react-router-dom";
 
 export function useApartment() {

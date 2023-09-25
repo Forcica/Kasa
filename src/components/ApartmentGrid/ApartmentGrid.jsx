@@ -1,4 +1,4 @@
-import ApartmentCard from "./ApartmentCard.jsx";
+import ApartmentCard from "./../ApartmentCard/ApartmentCard";
 import { useLoaderData } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 

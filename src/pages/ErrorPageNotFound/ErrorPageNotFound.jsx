@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Main from "../layout/Main";
-import Footer from "../layout/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import Main from "../../layout/Main/Main";
+import Footer from "../../layout/Footer/Footer";
+
 export function ErrorPageNotFound() {
   return (
     <>

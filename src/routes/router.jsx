@@ -1,13 +1,13 @@
 import React from "react";
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import HomePage from "../pages/Homepage";
-import Footer from "../layout/Footer";
-import Main from "../layout/Main";
-import Navbar from "../components/Navbar";
-import ApartmentPage from "../pages/ApartmentPage";
-import About from "../pages/About";
-import { ErrorPageNotFound } from "../pages/ErrorPageNotFound";
-import {loader as gridLoader} from "../components/ApartmentGrid";
+import HomePage from "../pages/Homepage/Homepage";
+import Footer from "../layout/Footer/Footer";
+import Main from "../layout/Main/Main";
+import Navbar from "../components/Navbar/Navbar";
+import ApartmentPage from "../pages/ApartmentPage/ApartmentPage";
+import About from "../pages/About/About";
+import { ErrorPageNotFound } from "../pages/ErrorPageNotFound/ErrorPageNotFound";
+import {loader as gridLoader} from "../components/ApartmentGrid/ApartmentGrid";
 
 const HeaderFooterLayout = () => {
   return (

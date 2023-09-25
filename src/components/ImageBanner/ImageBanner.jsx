@@ -28,7 +28,7 @@ export function ImageBanner(props) {
 
   const getCarouselOrDefaultImage = () => {
     if (!arePicturesAvailable()) {
-      return <img src="bannerAbout.png" className="show banner_about" alt="" />;
+      return <img src="./assets/bannerAbout.png" className="show banner_about" alt="" />;
     }
     return pictures.map((pic, i) => (
       <img key={pic} src={pic} alt="" className={getClassName(i)}></img>

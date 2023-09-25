@@ -1,6 +1,6 @@
 import React from "react";
-import Banner from "../layout/Banner.jsx";
-import ApartmentGrid from "../components/ApartmentGrid.jsx";
+import Banner from "../../layout/Banner/Banner";
+import ApartmentGrid from "../../components/ApartmentGrid/ApartmentGrid.jsx";
 
 function HomePage() {
   return (

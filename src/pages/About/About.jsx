@@ -1,6 +1,6 @@
 import React from "react";
-import { DescriptionPanel } from "../components/DescriptionPanel";
-import { ImageBanner } from "../components/ImageBanner";
+import { DescriptionPanel } from "../../components/DescriptionPanel/DescriptionPanel";
+import { ImageBanner } from "../../components/ImageBanner/ImageBanner";
 
 function About() {
   return (
