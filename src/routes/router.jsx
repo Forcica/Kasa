@@ -32,9 +32,10 @@ export const router = createBrowserRouter([
         loader: gridLoader
       },
       {
-        path: "/apartment/",
+        path: "/apartment/:id",
         element: <ApartmentPage />
       },
+      {path:"/error",element:<ErrorPageNotFound/>},
       {
         path: "/about",
         element: <About />

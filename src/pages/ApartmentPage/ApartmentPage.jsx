@@ -2,28 +2,53 @@ import { useState, useEffect } from "react";
 import { DescriptionPanel } from "../../components/DescriptionPanel/DescriptionPanel";
 import { ImageBanner } from "../../components/ImageBanner/ImageBanner";
 import { ApartmentHeader } from "../../components/ApartmentHeader/ApartmentHeader";
-import { useLocation } from "react-router-dom";
+import { useParams, redirect } from "react-router-dom";
 
-export function useApartment() {
-  const [apart, setApart] = useState(null);
-  const location = useLocation();
+// export function useApartment() {
+//   const [apart, setApart] = useState(null);
+//   const {id} = useParams();
 
-  useEffect(() => {
-    fetch("db.json")
-      .then((res) => res.json())
-      .then((aparts) => {
-        const apart = aparts.find((apart) => apart.id === location.state.apartmentId);
-        setApart(apart);
-      })
-      .catch(console.error);
-  }, [location.state.apartmentId]);
-  return apart;
-}
+//   useEffect(() => {
+//     fetch("../db.json")
+//       .then((res) => res.json())
+//       .then((aparts) => {
+//         const apart = aparts.find((apart) => apart.id === id);
+//         if (apart === undefined) {
+//           console.log("ErreurRedirect")
+//           redirect("/");}; 
+//         console.log(id)
+//         setApart(apart);
+//         console.log(apart)
+//       })
+//       .catch(console.error);
+//   }, [id]);
+//   return apart;
+// }
 
 function ApartmentPage() {
-  const apart = useApartment();
-
-  if (apart == null) return <div>Loading...</div>;
+  const [apart, setApart] = useState(null);
+  const {id} = useParams();
+  
+  useEffect(() => {
+    fetch("../db.json")
+    .then((res) => res.json())
+    .then((aparts) => {
+      const apart = aparts.find((apart) => apart.id === id);
+      console.log(id)
+        setApart(apart);
+        console.log(apart)
+      })
+      .catch(console.error);
+    }, [id]);
+    
+    console.log(apart)
+    
+    if (apart === null) {return <div>Loading...</div>};
+    if (apart === undefined) {
+      console.log("ErreurRedirect")
+      return <div>Error...</div>;
+      return redirect("/");
+    }
   return (
     <div className="apartment-page">
       <ImageBanner pictures={apart.pictures} />
