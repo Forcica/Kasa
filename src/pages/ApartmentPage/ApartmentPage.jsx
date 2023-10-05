@@ -1,54 +1,32 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { DescriptionPanel } from "../../components/DescriptionPanel/DescriptionPanel";
 import { ImageBanner } from "../../components/ImageBanner/ImageBanner";
 import { ApartmentHeader } from "../../components/ApartmentHeader/ApartmentHeader";
-import { useParams, redirect } from "react-router-dom";
-
-// export function useApartment() {
-//   const [apart, setApart] = useState(null);
-//   const {id} = useParams();
-
-//   useEffect(() => {
-//     fetch("../db.json")
-//       .then((res) => res.json())
-//       .then((aparts) => {
-//         const apart = aparts.find((apart) => apart.id === id);
-//         if (apart === undefined) {
-//           console.log("ErreurRedirect")
-//           redirect("/");}; 
-//         console.log(id)
-//         setApart(apart);
-//         console.log(apart)
-//       })
-//       .catch(console.error);
-//   }, [id]);
-//   return apart;
-// }
 
 function ApartmentPage() {
   const [apart, setApart] = useState(null);
-  const {id} = useParams();
-  
+  const { id } = useParams();
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetch("../db.json")
-    .then((res) => res.json())
-    .then((aparts) => {
-      const apart = aparts.find((apart) => apart.id === id);
-      console.log(id)
-        setApart(apart);
-        console.log(apart)
+      .then((res) => res.json())
+      .then((aparts) => {
+        const foundApart = aparts.find((a) => a.id === id);
+        if (foundApart === undefined) {
+          navigate("/error");
+          return;
+        }
+        setApart(foundApart);
       })
       .catch(console.error);
-    }, [id]);
-    
-    console.log(apart)
-    
-    if (apart === null) {return <div>Loading...</div>};
-    if (apart === undefined) {
-      console.log("ErreurRedirect")
-      return <div>Error...</div>;
-      return redirect("/");
-    }
+  }, [id, navigate]);
+
+  if (!apart) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="apartment-page">
       <ImageBanner pictures={apart.pictures} />
@@ -57,9 +35,13 @@ function ApartmentPage() {
         <DescriptionPanel title="Description" content={apart.description} />
         <DescriptionPanel
           title="Equipements"
-          content={apart.equipments.map((eq, i) => (
-            <li key={i}>{eq}</li>
-          ))}
+          content={
+            <ul>
+              {apart.equipments.map((eq, i) => (
+                <li key={i}>{eq}</li>
+              ))}
+            </ul>
+          }
         />
       </div>
     </div>
