@@ -31,8 +31,12 @@ export const router = createBrowserRouter([
         element: <HomePage />,
         loader: gridLoader
       },
+      // {
+      //   path: "/apartment/:id",
+      //   element: <ApartmentPage />
+      // },
       {
-        path: "/apartment/:id",
+        path: "/:id",
         element: <ApartmentPage />
       },
       {path:"/error",element:<ErrorPageNotFound/>},

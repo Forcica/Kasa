@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../components/Navbar/Navbar";
+// import Navbar from "../../components/Navbar/Navbar";
 import Main from "../../layout/Main/Main";
 import Footer from "../../layout/Footer/Footer";
 
 export function ErrorPageNotFound() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Main>
         <div className="error-page">
           <h1>404</h1>
