@@ -54,6 +54,11 @@
     @media (max-width: 375px) {
       height: 255px;
     }
+    @media screen and (max-width: 768px) {
+      .slide-counter {
+        display: none;
+      }
+    }
   }
 }
 #image__container--about{

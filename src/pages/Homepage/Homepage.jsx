@@ -5,8 +5,8 @@ import ApartmentGrid from "../../components/ApartmentGrid/ApartmentGrid.jsx";
 function HomePage() {
   return (
     <>
-      <Banner />
-      <ApartmentGrid />
+      <Banner /> {/* Affiche le composant Banner*/}
+      <ApartmentGrid /> {/* Affiche le composant ApartmentGrid qui liste les appartements disponibles */}
     </>
   );
 }

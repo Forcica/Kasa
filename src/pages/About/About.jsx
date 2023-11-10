@@ -5,8 +5,9 @@ import { ImageBanner } from "../../components/ImageBanner/ImageBanner";
 function About() {
   return (
     <>
-      <ImageBanner />
+      <ImageBanner /> {/* Affiche un carrousel d'images, ici sans images spécifiées */}
       <div className="about__container">
+        {/* Chaque DescriptionPanel affiche un panneau avec un titre et un contenu */}
         <DescriptionPanel title="Fiabilité" content="Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes." />
         <DescriptionPanel title="Respect" content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme." />
         <DescriptionPanel title="Service" content="La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de pertubation du voisinage entraînera une exclusion de notre plateforme." />
