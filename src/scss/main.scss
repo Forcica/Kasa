@@ -1,17 +1,17 @@
-@import "./utils/variables";
-@import "../components/ApartmentCard/ApartmentCard";
-@import "../components/ApartmentGrid/ApartmentGrid";
-@import "../components/ApartmentHeader/ApartmentHeader";
-@import "../components/DescriptionPanel/DescriptionPanel";
-@import "../components/ImageBanner/ImageBanner";
-@import "../components/Navbar/Navbar";
-@import "../layout/Banner/Banner";
-@import "../layout/Footer/Footer";
-@import "../pages/About/About";
-@import "../pages/ApartmentPage/ApartmentPage";
-@import "../pages/ErrorPageNotFound/ErrorPageNotFound";
-@import "../pages/Homepage/Homepage";
+@use "./utils/variables" as *;
+@use "../components/ApartmentCard/ApartmentCard";
+@use "../components/ApartmentGrid/ApartmentGrid";
+@use "../components/ApartmentHeader/ApartmentHeader";
+@use "../components/DescriptionPanel/DescriptionPanel";
+@use "../components/ImageBanner/ImageBanner";
+@use "../components/Navbar/Navbar";
+@use "../layout/Banner/Banner";
+@use "../layout/Footer/Footer";
+@use "../pages/About/About";
+@use "../pages/ApartmentPage/ApartmentPage";
+@use "../pages/ErrorPageNotFound/ErrorPageNotFound";
+@use "../pages/Homepage/Homepage";
 
 body {
     overflow-x: hidden;
-  }
+}

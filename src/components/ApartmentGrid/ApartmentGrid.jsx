@@ -4,7 +4,9 @@ import React, { useEffect, useState } from "react";
 
 export async function loader() {
 	// La fonction 'loader' charge les données des appartements depuis 'db.json'
-	const response = await fetch("/Kasa/db.json");
+	const response = await fetch(
+		process.env.NODE_ENV === "production" ? "/Kasa/db.json" : "/db.json"
+	);
 	const apartments = await response.json();
 	return { apartments }; // Renvoie les données des appartements pour qu'elles soient utilisées dans le composant
 }

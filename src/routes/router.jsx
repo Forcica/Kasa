@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter, Outlet, Navigate } from "react-router-dom";
 import HomePage from "../pages/Homepage/Homepage";
 import Footer from "../layout/Footer/Footer";
 import Main from "../layout/Main/Main";
@@ -29,7 +29,11 @@ export const router = createBrowserRouter(
 			errorElement: <ErrorPageNotFound />,
 			children: [
 				{
-					path: "/Kasa/",
+					path: "/",
+					element: <Navigate to="/Kasa" replace />,
+				},
+				{
+					path: "/Kasa",
 					element: <HomePage />,
 					loader: gridLoader,
 				},
@@ -49,6 +53,6 @@ export const router = createBrowserRouter(
 		},
 	],
 	{
-		basename: "/Kasa",
+		basename: "",
 	}
 );
