@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, Outlet, Navigate } from "react-router-dom";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import HomePage from "../pages/Homepage/Homepage";
 import Footer from "../layout/Footer/Footer";
 import Main from "../layout/Main/Main";
@@ -8,6 +8,7 @@ import ApartmentPage from "../pages/ApartmentPage/ApartmentPage";
 import About from "../pages/About/About";
 import { ErrorPageNotFound } from "../pages/ErrorPageNotFound/ErrorPageNotFound";
 import { loader as gridLoader } from "../components/ApartmentGrid/ApartmentGrid";
+import { BASE_PATH } from "../config/config";
 
 const HeaderFooterLayout = () => {
 	return (
@@ -30,29 +31,25 @@ export const router = createBrowserRouter(
 			children: [
 				{
 					path: "/",
-					element: <Navigate to="/Kasa" replace />,
-				},
-				{
-					path: "/Kasa",
 					element: <HomePage />,
 					loader: gridLoader,
 				},
 				{
-					path: "/Kasa/:id",
+					path: "/:id",
 					element: <ApartmentPage />,
 				},
 				{
-					path: "/Kasa/error",
+					path: "/error",
 					element: <ErrorPageNotFound />,
 				},
 				{
-					path: "/Kasa/about",
+					path: "/about",
 					element: <About />,
 				},
 			],
 		},
 	],
 	{
-		basename: "",
+		basename: BASE_PATH,
 	}
 );
