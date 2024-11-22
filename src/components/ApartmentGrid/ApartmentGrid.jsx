@@ -1,20 +1,14 @@
 import ApartmentCard from "./../ApartmentCard/ApartmentCard";
 import { useLoaderData } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { getAssetPath } from "../../config/config";
 
 export async function loader() {
-	try {
-		const response = await fetch(getAssetPath("db.json"));
-		if (!response.ok) {
-			throw new Error("Network response was not ok");
-		}
-		const apartments = await response.json();
-		return { apartments };
-	} catch (error) {
-		console.error("Error loading data:", error);
-		return { apartments: [] };
-	}
+	// La fonction 'loader' charge les données des appartements depuis 'db.json'
+	const response = await fetch(
+		process.env.NODE_ENV === "production" ? "/Kasa/db.json" : "/db.json"
+	);
+	const apartments = await response.json();
+	return { apartments }; // Renvoie les données des appartements pour qu'elles soient utilisées dans le composant
 }
 
 function ApartmentGrid() {

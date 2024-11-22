@@ -1,9 +1,8 @@
 @use "../../scss/utils/variables" as *;
 
-.footer__container {
-  width: 100%;
+.footer__container{
+  position: relative;
 }
-
 .footer {
   background-color: $footer-background-color;
   color: $color-tertiary;
@@ -12,5 +11,7 @@
   min-height: 165px;
   display: grid;
   place-items: center;
-  width: 100%;
+  top:0;
+  position: absolute;
+  width:100%;
 }

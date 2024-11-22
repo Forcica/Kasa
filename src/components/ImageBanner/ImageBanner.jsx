@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { getAssetPath } from "../../config/config";
 
 export function ImageBanner(props) {
 	const pictures = props.pictures; // Récupère l'array 'pictures' depuis les props
@@ -31,14 +30,14 @@ export function ImageBanner(props) {
 		if (!arePicturesAvailable()) {
 			return (
 				<img
-					src={getAssetPath("assets/bannerAbout.png")}
+					src="/Kasa/assets/bannerAbout.png"
 					className="show banner_about"
 					alt=""
 				/>
-			);
+			); // Si pas d'images, montre une image par défaut
 		}
 		return pictures.map((pic, i) => (
-			<img key={pic} src={pic} alt="" className={getClassName(i)}></img>
+			<img key={pic} src={pic} alt="" className={getClassName(i)}></img> // Crée un carrousel d'images
 		));
 	};
 

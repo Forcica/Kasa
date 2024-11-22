@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter, Outlet, Navigate } from "react-router-dom";
 import HomePage from "../pages/Homepage/Homepage";
 import Footer from "../layout/Footer/Footer";
 import Main from "../layout/Main/Main";
@@ -8,16 +8,16 @@ import ApartmentPage from "../pages/ApartmentPage/ApartmentPage";
 import About from "../pages/About/About";
 import { ErrorPageNotFound } from "../pages/ErrorPageNotFound/ErrorPageNotFound";
 import { loader as gridLoader } from "../components/ApartmentGrid/ApartmentGrid";
-import { BASE_PATH } from "../config/config";
 
 const HeaderFooterLayout = () => {
 	return (
 		<>
-			<Navbar />
+			<Navbar /> {/* Composant Navbar pour la navigation */}
 			<Main>
-				<Outlet />
+				<Outlet />{" "}
+				{/* Point d'insertion pour les composants de la page en fonction de la route */}
 			</Main>
-			<Footer />
+			<Footer /> {/* Composant Footer pour le pied de page */}
 		</>
 	);
 };
@@ -25,31 +25,34 @@ const HeaderFooterLayout = () => {
 export const router = createBrowserRouter(
 	[
 		{
-			path: "/",
 			element: <HeaderFooterLayout />,
 			errorElement: <ErrorPageNotFound />,
 			children: [
 				{
-					index: true,
+					path: "/",
+					element: <Navigate to="/Kasa" replace />,
+				},
+				{
+					path: "/Kasa",
 					element: <HomePage />,
 					loader: gridLoader,
 				},
 				{
-					path: "apartment/:id",
+					path: "/Kasa/:id",
 					element: <ApartmentPage />,
 				},
 				{
-					path: "about",
-					element: <About />,
+					path: "/Kasa/error",
+					element: <ErrorPageNotFound />,
 				},
 				{
-					path: "*",
-					element: <ErrorPageNotFound />,
+					path: "/Kasa/about",
+					element: <About />,
 				},
 			],
 		},
 	],
 	{
-		basename: BASE_PATH,
+		basename: "",
 	}
 );

@@ -12,22 +12,6 @@
 @use "../pages/ErrorPageNotFound/ErrorPageNotFound";
 @use "../pages/Homepage/Homepage";
 
-html, body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}
-
 body {
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
-.main {
-  flex: 1;
-}
-
-.footer__container {
-  margin-top: auto;
+    overflow-x: hidden;
 }

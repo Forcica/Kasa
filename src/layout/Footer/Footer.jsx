@@ -1,21 +1,26 @@
 import React from "react";
-import { getAssetPath } from "../../config/config";
 
 function Footer() {
+	// Ce composant Footer représente le pied de page du site web
 	return (
 		<div className="footer__container">
+			{/* Conteneur principal du footer */}
 			<div className="footer">
+				{/* Contenu du footer */}
 				<div>
+					{/* Section pour le logo */}
 					<img
-						src={getAssetPath("assets/logo-black.png")}
+						src="/Kasa/assets/logo-black.png"
 						alt="logo"
 						width="100"
-					/>
+					/>{" "}
+					{/* Logo de l'entreprise ou de l'application */}
 				</div>
-				<div>© 2020 Kasa. All rights reserved</div>
+				<div>© 2020 Kasa. All rights reserved</div>{" "}
+				{/* Message de droits d'auteur */}
 			</div>
 		</div>
 	);
 }
 
-export default Footer;
+export default Footer; // Exporte le composant pour une utilisation dans d'autres parties de l'application
