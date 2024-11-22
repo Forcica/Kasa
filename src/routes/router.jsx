@@ -1,5 +1,5 @@
 import React from "react";
-import { createHashRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import HomePage from "../pages/Homepage/Homepage";
 import Footer from "../layout/Footer/Footer";
 import Main from "../layout/Main/Main";
@@ -22,7 +22,7 @@ const HeaderFooterLayout = () => {
 	);
 };
 
-export const router = createHashRouter(
+export const router = createBrowserRouter(
 	[
 		{
 			path: "/",
