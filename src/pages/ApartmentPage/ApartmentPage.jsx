@@ -1,30 +1,32 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { DescriptionPanel } from "../../components/DescriptionPanel/DescriptionPanel";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { ImageBanner } from "../../components/ImageBanner/ImageBanner";
 import { ApartmentHeader } from "../../components/ApartmentHeader/ApartmentHeader";
+import { DescriptionPanel } from "../../components/DescriptionPanel/DescriptionPanel";
+import { getAssetPath } from "../../config/config";
 
 function ApartmentPage() {
 	const [apart, setApart] = useState(null); // Gestion de l'état pour stocker les détails de l'appartement
 	const { id } = useParams(); // Récupération de l'identifiant de l'appartement depuis l'URL
-	// const navigate = useNavigate(); // Hook pour la navigation
+	const navigate = useNavigate(); // Hook pour la navigation
 
 	useEffect(() => {
 		// Charge les données de l'appartement au montage du composant
-		fetch(
-			process.env.NODE_ENV === "production" ? "/Kasa/db.json" : "/db.json"
-		)
+		fetch(getAssetPath("db.json"))
 			.then((res) => res.json())
 			.then((aparts) => {
 				const foundApart = aparts.find((a) => a.id === id); // Trouve l'appartement correspondant à l'ID
 				if (foundApart === undefined) {
-					// navigate("/error"); // Redirige vers la page d'erreur si l'appartement n'est pas trouvé
+					navigate("/error"); // Redirige vers la page d'erreur si l'appartement n'est pas trouvé
 					return;
 				}
 				setApart(foundApart); // Met à jour l'état avec les détails de l'appartement trouvé
 			})
-			.catch(console.error); // Gère les erreurs de chargement des données
-	}, [id]); // Dépendances du useEffect
+			.catch((error) => {
+				console.error(error);
+				navigate("/error");
+			});
+	}, [id, navigate]); // Dépendances du useEffect
 
 	if (!apart) {
 		return <div>Loading...</div>; // Affiche un message de chargement tant que les données ne sont pas chargées

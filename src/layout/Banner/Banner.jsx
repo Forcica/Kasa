@@ -1,8 +1,9 @@
 import React from "react";
+import { BASE_PATH } from "../../config/config";
 
 function Banner() {
 	const bannerStyle = {
-		backgroundImage: `url(${process.env.PUBLIC_URL}/assets/Banner.png)`,
+		backgroundImage: `url(${BASE_PATH}/assets/Banner.png)`,
 	};
 	return (
 		<div className="banner" style={bannerStyle}>
