@@ -1,19 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { BASE_PATH } from "../../config/config";
 
 function Navbar() {
 	return (
 		<nav className="navbar">
-			<NavLink to="/">
+			<NavLink to="/Kasa">
 				<div className="navbar__logo">
-					<img src={`${BASE_PATH}/assets/logo.png`} alt="Logo" />
+					<img src="/Kasa/assets/logo.png" alt="Logo" />
 				</div>
 			</NavLink>
-			<NavLink to="/">
+			<NavLink to="/Kasa">
 				<div>Accueil</div>
 			</NavLink>
-			<NavLink to="/about">
+			<NavLink to="/Kasa/about">
 				<div>A propos</div>
 			</NavLink>
 		</nav>

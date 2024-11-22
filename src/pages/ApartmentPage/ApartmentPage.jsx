@@ -11,9 +11,7 @@ function ApartmentPage() {
 
 	useEffect(() => {
 		// Charge les données de l'appartement au montage du composant
-		fetch(
-			process.env.NODE_ENV === "production" ? "/Kasa/db.json" : "/db.json"
-		)
+		fetch("/Kasa/db.json")
 			.then((res) => res.json())
 			.then((aparts) => {
 				const foundApart = aparts.find((a) => a.id === id); // Trouve l'appartement correspondant à l'ID

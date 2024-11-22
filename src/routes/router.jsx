@@ -8,7 +8,6 @@ import ApartmentPage from "../pages/ApartmentPage/ApartmentPage";
 import About from "../pages/About/About";
 import { ErrorPageNotFound } from "../pages/ErrorPageNotFound/ErrorPageNotFound";
 import { loader as gridLoader } from "../components/ApartmentGrid/ApartmentGrid";
-import { BASE_PATH } from "../config/config";
 
 const HeaderFooterLayout = () => {
 	return (
@@ -30,26 +29,26 @@ export const router = createBrowserRouter(
 			errorElement: <ErrorPageNotFound />,
 			children: [
 				{
-					path: "/",
+					path: "/Kasa/",
 					element: <HomePage />,
 					loader: gridLoader,
 				},
 				{
-					path: "/:id",
+					path: "/Kasa/:id",
 					element: <ApartmentPage />,
 				},
 				{
-					path: "/error",
+					path: "/Kasa/error",
 					element: <ErrorPageNotFound />,
 				},
 				{
-					path: "/about",
+					path: "/Kasa/about",
 					element: <About />,
 				},
 			],
 		},
 	],
 	{
-		basename: BASE_PATH,
+		basename: "/Kasa",
 	}
 );
