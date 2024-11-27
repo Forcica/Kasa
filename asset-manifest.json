@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "https://forcica.github.io/Kasa/static/css/main.da610e19.css",
+    "main.css": "https://forcica.github.io/Kasa/static/css/main.f39c2f2e.css",
     "main.js": "https://forcica.github.io/Kasa/static/js/main.21f0440f.js",
     "static/media/Banner.png": "https://forcica.github.io/Kasa/static/media/Banner.19221376a0aa2549c135.png",
     "index.html": "https://forcica.github.io/Kasa/index.html",
-    "main.da610e19.css.map": "https://forcica.github.io/Kasa/static/css/main.da610e19.css.map",
+    "main.f39c2f2e.css.map": "https://forcica.github.io/Kasa/static/css/main.f39c2f2e.css.map",
     "main.21f0440f.js.map": "https://forcica.github.io/Kasa/static/js/main.21f0440f.js.map"
   },
   "entrypoints": [
-    "static/css/main.da610e19.css",
+    "static/css/main.f39c2f2e.css",
     "static/js/main.21f0440f.js"
   ]
 }
