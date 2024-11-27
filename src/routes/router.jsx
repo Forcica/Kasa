@@ -12,12 +12,11 @@ import { loader as gridLoader } from "../components/ApartmentGrid/ApartmentGrid"
 const HeaderFooterLayout = () => {
 	return (
 		<>
-			<Navbar /> {/* Composant Navbar pour la navigation */}
+			<Navbar />
 			<Main>
-				<Outlet />{" "}
-				{/* Point d'insertion pour les composants de la page en fonction de la route */}
+				<Outlet />
 			</Main>
-			<Footer /> {/* Composant Footer pour le pied de page */}
+			<Footer />
 		</>
 	);
 };
@@ -29,21 +28,21 @@ export const router = createBrowserRouter(
 			errorElement: <ErrorPageNotFound />,
 			children: [
 				{
-					path: "/Kasa/",
+					path: "/",
 					element: <HomePage />,
 					loader: gridLoader,
 				},
 				{
-					path: "/Kasa/:id",
+					path: "/logement/:id",
 					element: <ApartmentPage />,
 				},
 				{
-					path: "/Kasa/error",
-					element: <ErrorPageNotFound />,
+					path: "/about",
+					element: <About />,
 				},
 				{
-					path: "/Kasa/about",
-					element: <About />,
+					path: "*",
+					element: <ErrorPageNotFound />,
 				},
 			],
 		},
