@@ -5,7 +5,7 @@ function ApartmentCard(props) {
 	// Ce composant ApartmentCard représente une carte individuelle pour un appartement
 	return (
 		// Utilise le composant Link de react-router-dom pour naviguer vers la page de l'appartement
-		<Link to={`/Kasa/${props.id}`}>
+		<Link to={`/${props.id}`}>
 			{/* Conteneur de la carte d'appartement */}
 			<div className="apartment">
 				{/* Image de l'appartement */}
